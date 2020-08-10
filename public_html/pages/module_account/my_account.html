@@ -4,12 +4,17 @@
     <meta charset="utf-8">
     <title> Umagal </title>
 
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="../css/estilos.css">
+
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="../../css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../../css/estilos.css">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="../js/main.js"></script>
+    <script type="text/javascript" src="../../js/main.js"></script>
 
   </head>
   <body>
@@ -27,34 +32,34 @@
           <div class="div-right">
             <ul class="navbar-nav mr-auto">
       				<li class="nav-item">
-      				  <a class="nav-link" href="../index.html">
+      				  <a class="nav-link" href="../../index.html">
                   <h5>
                     Artistas
                   </h5>
                 </a>
       				</li>
       				<li class="nav-item">
-      				  <a class="nav-link" href="exhibitions.html">
+      				  <a class="nav-link" href="../exhibitions.html">
                   <h5> Exhibiciones </h5>
                 </a>
       				</li>
       				<li class="nav-item">
-                <a class="nav-link" href="fairs.html">
+                <a class="nav-link" href="../fairs.html">
                   <h5>Ferias</h5>
                 </a>
       				</li>
       				<li class="nav-item">
-                <a class="nav-link" href="videos.html">
+                <a class="nav-link" href="../videos.html">
                   <h5>Videos</h5>
                 </a>
       				</li>
-              <li class="nav-item active">
-                <a class="nav-link" href="galleries.html">
+              <li class="nav-item">
+                <a class="nav-link" href="../galleries.html">
                   <h5>Galerias</h5>
                 </a>
       				</li>
               <li class="nav-item">
-                <a class="nav-link" href="contactos.html">
+                <a class="nav-link" href="../contactos.html">
                   <h5>Contactos</h5>
                 </a>
       				</li>
@@ -63,21 +68,27 @@
               </div>
 
               <li class="nav-item li_not_logged_in">
-                <a class="nav-link" href="module_account/login.html">
+                <a class="nav-link" href="login.html">
                   <h5><b>Iniciar sesión</b></h5>
                 </a>
               </li>
               <li class="nav-item li_not_logged_in">
-                <a class="nav-link" href="module_account/registration.html">
+                <a class="nav-link" href="registration.html">
                   <h5><b>Registrarse</b></h5>
 
                 </a>
               </li>
 
-              <li class="nav-item li_logged_in" style="display: none;">
-                <a class="nav-link" href="module_account/mi_cuenta.html">
-                  <h4><b>Mi cuenta</b><h4>
+              <li class="nav-item li_logged_in">
+                <a class="nav-link" href="my_account.html">
+                  <h5><b>Mi cuenta</b></h5>
                 </a>
+              </li>
+
+              <li class="nav-item li_logged_in">
+                <button class="btn btn-primary" style="color: black;" id="buttonLogOut">
+                  <h5><b>Cerrar sesión</b><h5>
+                </button>
               </li>
 
     			  </ul>
