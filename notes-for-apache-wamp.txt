@@ -1,0 +1,4 @@
+
+Allow access-control sin .htaccess
+
+https://stackoverflow.com/questions/18137094/how-to-allow-access-control-allow-origin-aka-cross-domain-on-wampserver

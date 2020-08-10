@@ -12,11 +12,22 @@
 }
 
 
-.centro {
-  display: block;
-  margin: auto;
-  text-align: center;
+.center {
+    text-align: center;
+    margin: 0 auto;
 
+}
+
+.form-umagal {
+    margin: 0 auto;
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color: #bcc6f5;
+    width: 60%;
+}
+
+.text-grey {
+    color: #9d9ea3;
 }
 
 nav {

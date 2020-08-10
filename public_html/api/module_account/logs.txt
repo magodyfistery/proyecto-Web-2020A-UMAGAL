@@ -1,0 +1,11 @@
+2020/08/09#SEPARADOR_INTERNO#10:47:25pm#SEPARADOR_INTERNO#::1#SEPARADOR_INTERNO#/web-proyecto-2020A/public_html/api/module_account/auth_and_retrieve_user.php#SEPARADOR_INTERNO#Datos inválidos#SEPARADOR_INTERNO#At least one null data was sent at position: 0 of array
+#SEPARADOR_LOG#
+2020/08/09#SEPARADOR_INTERNO#10:49:07pm#SEPARADOR_INTERNO#::1#SEPARADOR_INTERNO#/web-proyecto-2020A/public_html/api/module_account/auth_and_retrieve_user.php#SEPARADOR_INTERNO#Datos inválidos#SEPARADOR_INTERNO#At least one null data was sent at position: 0 of array
+#SEPARADOR_LOG#
+2020/08/09#SEPARADOR_INTERNO#10:50:09pm#SEPARADOR_INTERNO#::1#SEPARADOR_INTERNO#/web-proyecto-2020A/public_html/api/module_account/auth_and_retrieve_user.php#SEPARADOR_INTERNO#Datos inválidos#SEPARADOR_INTERNO#At least one null data was sent at position: 0 of array
+#SEPARADOR_LOG#
+2020/08/09#SEPARADOR_INTERNO#10:51:16pm#SEPARADOR_INTERNO#::1#SEPARADOR_INTERNO#/web-proyecto-2020A/public_html/api/module_account/auth_and_retrieve_user.php#SEPARADOR_INTERNO#Datos inválidos#SEPARADOR_INTERNO#At least one null data was sent at position: 0 of array
+#SEPARADOR_LOG#
+2020/08/09#SEPARADOR_INTERNO#10:53:48pm#SEPARADOR_INTERNO#::1#SEPARADOR_INTERNO#/web-proyecto-2020A/public_html/api/module_account/auth_and_retrieve_user.php#SEPARADOR_INTERNO#Datos inválidos#SEPARADOR_INTERNO#At least one null data was sent at position: 0 of array
+#SEPARADOR_LOG#
+2020/08/09#SEPARADOR_INTERNO#10:54:29pm#SEPARADOR_INTERNO#::1#SEPARADOR_INTERNO#/web-proyecto-2020A/public_html/api/module_account/auth_and_retrieve_user.php#SEPARADOR_INTERNO#Datos inválidos#SEPARADOR_INTERNO#At least one null data was sent at position: 0 of array
