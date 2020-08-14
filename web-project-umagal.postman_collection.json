@@ -31,6 +31,17 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "/api/user/auth_artist",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
 		}
 	],
 	"protocolProfileBehavior": {}
