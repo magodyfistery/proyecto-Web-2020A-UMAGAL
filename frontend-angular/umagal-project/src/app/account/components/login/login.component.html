@@ -1,0 +1,55 @@
+
+<form [formGroup]="formGroup" (ngSubmit)="authAndRetrieveUser($event)">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> Login </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+
+
+      <mat-form-field appearance="fill" >
+        <mat-label>Tipo de usuario</mat-label>
+        <mat-select formControlName="login_type">
+        <mat-option
+        *ngFor="let user_type of user_types"
+        [value]="user_type" >
+          {{user_type}}
+        </mat-option>
+
+        </mat-select>
+      </mat-form-field>
+
+
+
+
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input placeholder="Ingrese el nombre de usuario" formControlName="username" matInput type="text">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input placeholder="Ingrese la contraseña" formControlName="password" matInput type="password">
+          </mat-form-field>
+        </div>
+      </div>
+
+
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button [disabled]="formGroup.invalid" mat-raised-button type="submit"> Ingresar </button>
+    </mat-card-actions>
+  </mat-card>
+  <br><br>
+  <p class="center text-grey">¿No tiene una cuenta? <a mat-button routerLink="/registration" routerLinkActive="active">Registrarse</a></p>
+  <br><br>
+
+
+
+</form>

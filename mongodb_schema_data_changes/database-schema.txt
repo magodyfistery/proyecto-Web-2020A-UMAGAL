@@ -1,0 +1,6 @@
+Mongo:
+use umagal_db
+CMD:
+mongoimport --db umagal_db --collection artists --file artists.json
+mongoimport --db umagal_db --collection clients --file clients.json
+mongoimport --db umagal_db --collection exhibitions --file exhibitions.json
