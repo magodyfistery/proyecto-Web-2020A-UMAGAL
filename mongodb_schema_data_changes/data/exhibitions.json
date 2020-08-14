@@ -1,0 +1,2 @@
+{"name": "Exhibición bicentenario", "date": "2020-12-12", "description": "Celebración por los 200 años", "url_principal_img": "https://picsum.photos/200/300", "is_fair": false, "artists": ["user1", "user3"]}
+{"name": "Feria por la diversión", "date": "2020-11-11", "description": "Feria por los 200 años", "url_principal_img": "https://picsum.photos/200/300", "is_fair": true, "artists": ["user3"]}
