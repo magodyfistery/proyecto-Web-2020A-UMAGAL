@@ -8,9 +8,14 @@ import { UmagalResponse } from '../../models/umagal-response.model';
 })
 export class AuthService {
 
+  user: any;
+
+
   constructor(
     private http: HttpClient
-  ) { }
+  ) {
+    this.user = null;
+  }
 
 
   authAndRetrieveArtist(username: string, password: string){
@@ -23,5 +28,20 @@ export class AuthService {
     return this.http.post<UmagalResponse>(environment.url_api + '/user/auth_client', {
       username: username, password: password
     });
+  }
+
+  isLoggedIn(): boolean{
+    this.user = JSON.parse(localStorage.getItem("user"));
+    return this.user != null && this.user != undefined;
+  }
+
+  setCookieLogginUser(user: any) {
+    localStorage.setItem("user", JSON.stringify(user))
+    // console.log(JSON.parse(localStorage.getItem("user")))
+  }
+
+  logOut() {
+    localStorage.removeItem("user")
+    this.user = null
   }
 }

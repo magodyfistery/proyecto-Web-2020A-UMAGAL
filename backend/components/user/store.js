@@ -3,16 +3,15 @@ const ModelClient = require('../../business_models/client')
 const ModelArtist = require('../../business_models/artist')
 const messagesWellKnowed = require("../../parameters").MESSAGES_WELL_KNOWED
 
-function authAndRetrieveClient(username, password){
+function authAndRetrieveClient(user){
 
     return new Promise((resolve, reject) =>{
 
-        let filter = {username: username, password: password}
 
-        ModelClient.findOne(filter)
+        ModelClient.findOne(user)
             .then((client) => {
 
-                console.log("Cliente consultado: ", client)
+                // console.log("Cliente consultado: ", client)
 
                 if(client == null){
                   resolve(messagesWellKnowed.MESSAGE_INVALID_CREDENTIALS)
@@ -39,7 +38,7 @@ function authAndRetrieveArtist(username, password){
         ModelArtist.findOne(filter)
             .then((artist) => {
 
-                console.log("Artista consultado: ", artist)
+                // console.log("Artista consultado: ", artist)
 
                 if(artist == null){
                   resolve(messagesWellKnowed.MESSAGE_INVALID_CREDENTIALS)

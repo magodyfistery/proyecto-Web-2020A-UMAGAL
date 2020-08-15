@@ -41,7 +41,9 @@ export class LoginComponent implements OnInit {
           .subscribe(response => {
             console.log("authAndRetrieveUser: ", response);
             if(response.body.status == 1){
-              this.router.navigate(['./home']);
+              this.authService.setCookieLogginUser(response.body.data[0]);
+
+              this.router.navigate(['./']);
             }
             alert(response.body.msg)
           });
@@ -51,7 +53,8 @@ export class LoginComponent implements OnInit {
           .subscribe(response => {
             console.log("authAndRetrieveUser: ", response);
             if(response.body.status == 1){
-              this.router.navigate(['./home']);
+              this.authService.setCookieLogginUser(response.body.data[0]);
+              this.router.navigate(['./']);
             }
             alert(response.body.msg)
           });

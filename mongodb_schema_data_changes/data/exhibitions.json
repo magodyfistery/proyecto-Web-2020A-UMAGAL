@@ -1,2 +1,8 @@
-{"name": "Exhibición bicentenario", "date": "2020-12-12", "description": "Celebración por los 200 años", "url_principal_img": "https://picsum.photos/200/300", "is_fair": false, "artists": ["user1", "user3"]}
+{"name": "Exhibición bicentenario", "date": "2020-12-22", "description": "Celebración por los 200 años", "url_principal_img": "https://picsum.photos/200/300", "is_fair": false, "artists": ["user1", "user3"]}
+{"name": "Exhibición de ondas", "date": "2019-03-12", "description": "Ondas de agua", "url_principal_img": "https://picsum.photos/200/300", "is_fair": false, "artists": ["user1", "user3"]}
+{"name": "Exhibición nuevos talentos", "date": "2018-08-12", "description": "Nuevos expositores", "url_principal_img": "https://picsum.photos/200/300", "is_fair": false, "artists": ["user1", "user3"]}
+{"name": "Exhibición distrito principal", "date": "2017-11-12", "description": "Primer evento en México", "url_principal_img": "https://picsum.photos/200/300", "is_fair": false, "artists": []}
 {"name": "Feria por la diversión", "date": "2020-11-11", "description": "Feria por los 200 años", "url_principal_img": "https://picsum.photos/200/300", "is_fair": true, "artists": ["user3"]}
+{"name": "Feria por la Alegría", "date": "2019-11-11", "description": "Feria por los 300 años", "url_principal_img": "https://picsum.photos/200/300", "is_fair": true, "artists": ["user1"]}
+{"name": "Feria por la Tristeza", "date": "2018-11-11", "description": "Trsiteza", "url_principal_img": "https://picsum.photos/200/300", "is_fair": true, "artists": ["user1", "user3"]}
+{"name": "Feria por la Osadía", "date": "2017-11-11", "description": "Osado", "url_principal_img": "https://picsum.photos/200/300", "is_fair": true, "artists": ["user1"]}

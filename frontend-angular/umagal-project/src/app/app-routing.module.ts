@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { BaseLayoutComponent } from './base-layout/base-layout.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ContactComponent } from './contact/contact.component';
 
 
 const routes: Routes = [
@@ -11,12 +12,20 @@ const routes: Routes = [
     children: [
         {
           path: '',
-          redirectTo: '/account/login',
+          redirectTo: '/exhibition/fairs',
           pathMatch: 'full',  // la url sin ningun path
         },
         {
           path: 'account',  // significa que no hubo match
           loadChildren: () => import('./account/account.module').then(m => m.AccountModule)
+        },
+        {
+          path: 'exhibition',  // significa que no hubo match
+          loadChildren: () => import('./exhibition/exhibition.module').then(m => m.ExhibitionModule)
+        },
+        {
+          path: 'contact',  // significa que no hubo match
+          component: ContactComponent
         },
       ]
   },

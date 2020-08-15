@@ -5,17 +5,18 @@ import { FooterComponent } from './components/footer/footer.component';
 import { RouterModule } from '@angular/router';
 import { MaterialModule } from '../material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { FormatStringListPipe } from './pipes/format-string-list.pipe';
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, FooterComponent],
+  declarations: [HeaderComponent, FooterComponent, FormatStringListPipe],
   imports: [
     CommonModule,
     RouterModule,
     MaterialModule,
     ReactiveFormsModule,
   ],
-  exports: [HeaderComponent, FooterComponent]
+  exports: [HeaderComponent, FooterComponent, FormatStringListPipe]
 })
 export class SharedModule { }

@@ -1,0 +1,41 @@
+
+<div class="center">
+  <mat-form-field appearance="fill" >
+    <mat-label>Año de la feria </mat-label>
+    <mat-select (selectionChange)="changeYear($event.value)">
+      <mat-option
+      *ngFor="let year of years"
+      [value]="year"
+      >
+        {{year}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+
+<div *ngIf="fair">
+  <img class="image-exhibition center"
+    src="{{fair.url_principal_img}}" alt=""
+  />
+  <br><br>
+  <div>
+      <div class="box-left center">
+        <h2> {{ fair.name }} </h2>
+        <h3> {{ fair.date }}</h3>
+      </div>
+
+      <div class="box-right">
+        <h4 class="center" style="margin: auto;">
+          {{ fair.description }}. Los artistas participantes son: {{ fair.artists | formatStringList }}
+
+        </h4>
+      </div>
+
+  </div>
+
+</div>
+
+<div style="clear:both;">
+
+</div>

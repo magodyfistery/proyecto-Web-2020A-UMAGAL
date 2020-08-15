@@ -2,7 +2,8 @@ const mongoDBTablesNames = {
   // Todo en singular, mongo lo hace plural
     client: "client",
     artist: "artist",
-    exhibition: "exhibition"
+    exhibition: "exhibition",
+    contact: "contact"
 }
 
 const MESSAGES_WELL_KNOWED = {
