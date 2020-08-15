@@ -8,6 +8,9 @@ import { BaseLayoutComponent } from './base-layout/base-layout.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
+import { ContactComponent } from './contact/contact.component';
+import { MaterialModule } from './material/material.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,6 +18,7 @@ import { SharedModule } from './shared/shared.module';
     AppComponent,
     BaseLayoutComponent,
     PageNotFoundComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -22,6 +26,9 @@ import { SharedModule } from './shared/shared.module';
     BrowserAnimationsModule,
     HttpClientModule,
     SharedModule,
+    MaterialModule,
+    ReactiveFormsModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]

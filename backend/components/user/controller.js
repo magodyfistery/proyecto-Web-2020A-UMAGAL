@@ -11,7 +11,13 @@ function authClient(username, password){
             return false
         }
 
-        resolve(store.authAndRetrieveClient(username, password))
+        const user = {
+          username: username,
+          password: password
+          // more logic here
+        }
+
+        resolve(store.authAndRetrieveClient(user))
     })
 
 

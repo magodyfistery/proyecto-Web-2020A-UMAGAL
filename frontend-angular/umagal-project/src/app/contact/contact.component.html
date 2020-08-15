@@ -1,0 +1,66 @@
+<div class="box-left">
+
+  <form [formGroup]="formGroup" (ngSubmit)="addRequestToContact($event)">
+    <mat-card class="center" >
+      <mat-card-header class="center" >
+        <h3> Formulario de contacto </h3>
+      </mat-card-header>
+
+      <mat-card-content class="center" >
+
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <input placeholder="Ingrese su nombre" formControlName="name" matInput type="text">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <input placeholder="Ingrese su correo" formControlName="email" matInput type="email">
+            </mat-form-field>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-xs">
+            <mat-form-field>
+              <input placeholder="Ingrese su número" formControlName="contact_phone" matInput type="number">
+            </mat-form-field>
+          </div>
+        </div>
+
+
+      </mat-card-content>
+
+      <mat-card-actions>
+        <button class="center" [disabled]="formGroup.invalid" mat-raised-button type="submit"> Enviar </button>
+      </mat-card-actions>
+    </mat-card>
+    <br>
+  </form>
+
+  <div class="center" style="line-height: 50%;">
+    <p> Umagal Gallery </p>
+    <p> 13 Carlos Place </p>
+    <p> London </p>
+    <p> W1K 2EU </p>
+    <br>
+    <p> Opening Hours Monday-Friday, 10am-6pm </p>
+    <p> Admission to the gallery is free of charge and booking is not required </p>
+    <br>
+    <p> Tel +44 (0) 207 499 9493 </p>
+  </div>
+
+</div>
+
+<div class="box-right" style="vertical-align: middle; height: 100%; margin-top: auto; margin-bottom:auto;">
+  <img src="../assets/map.png" alt="" style="width: 100%; " class="center">
+
+</div>
+
+<div style="clear:both;">
+
+</div>
