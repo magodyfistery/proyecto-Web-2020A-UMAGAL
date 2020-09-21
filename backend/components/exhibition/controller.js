@@ -22,9 +22,16 @@ function getFairFromYear(year){
 
 }
 
+function getExhibitions(){
+    return new Promise((resolve, reject) =>{
+        resolve(store.getExhibitions())
+    })
+}
+
 
 
 //exportamos las funciones
 module.exports = {
-    getFairFromYear
+    getFairFromYear,
+    getExhibitions
 }

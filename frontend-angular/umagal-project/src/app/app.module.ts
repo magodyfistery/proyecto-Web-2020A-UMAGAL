@@ -11,6 +11,7 @@ import { SharedModule } from './shared/shared.module';
 import { ContactComponent } from './contact/contact.component';
 import { MaterialModule } from './material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { VideoComponent } from './video/video.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     BaseLayoutComponent,
     PageNotFoundComponent,
     ContactComponent,
+    VideoComponent,
   ],
   imports: [
     BrowserModule,

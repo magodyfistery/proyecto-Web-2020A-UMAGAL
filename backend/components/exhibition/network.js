@@ -22,6 +22,20 @@ router.get("/fairs/:year", function(request, response){
 
 });
 
+router.get("", function(request, response){
+
+    controller.getExhibitions()
+        .then((server_response) =>{
+            res.success(request, response, server_response, 201)  //mejor manera de contestar, parametriza todo esto
+
+        })
+        .catch(e => {
+            res.error(request, response, "Información inválida", 400, "Error al buscar las exhibiciones")
+        })
+
+});
+
+
 
 
 
