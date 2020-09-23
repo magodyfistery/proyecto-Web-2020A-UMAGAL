@@ -9,12 +9,14 @@ import { UmagalResponse } from '../../models/umagal-response.model';
 export class AuthService {
 
   user: any;
+  user_admin: any;
 
 
   constructor(
     private http: HttpClient
   ) {
     this.user = null;
+    this.user_admin = null;
   }
 
 
@@ -26,6 +28,13 @@ export class AuthService {
 
   authAndRetrieveClient(username: string, password: string){
     return this.http.post<UmagalResponse>(environment.url_api + '/user/auth_client', {
+      username: username, password: password
+    });
+  }
+
+  // pendiente
+  authAndRetrieveAdmin(username: string, password: string){
+    return this.http.post<UmagalResponse>(environment.url_api + '/user/auth_admin', {
       username: username, password: password
     });
   }
@@ -43,5 +52,20 @@ export class AuthService {
   logOut() {
     localStorage.removeItem("user")
     this.user = null
+  }
+
+  isAdminLoggedIn(): boolean{
+    this.user_admin = JSON.parse(localStorage.getItem("user_admin"));
+    return this.user_admin != null && this.user_admin != undefined;
+  }
+
+  setCookieLogginAdmin(user: any) {
+    localStorage.setItem("user_admin", JSON.stringify(user))
+    // console.log(JSON.parse(localStorage.getItem("user")))
+  }
+
+  logOutAdmin() {
+    localStorage.removeItem("user_admin")
+    this.user_admin = null
   }
 }
