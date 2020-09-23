@@ -39,9 +39,25 @@ function authArtist(username, password){
 
 }
 
+function authAdmin(username, password){
+    //
+    return new Promise((resolve, reject) =>{
+        if(!username || !password){
+            console.error('userController: authAdmin: No hay username o password')
+            reject('Datos incorrectos')
+            return false
+        }
+
+        resolve(store.authAndRetrieveAdmin(username, password))
+    })
+
+
+}
+
 
 //exportamos las funciones
 module.exports = {
     authClient,
-    authArtist
+    authArtist,
+    authAdmin
 }
