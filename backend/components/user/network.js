@@ -40,5 +40,20 @@ router.post("/auth_artist", function(request, response){
 
 });
 
+router.post("/auth_admin", function(request, response){
+
+
+    //por la promesa
+    controller.authAdmin(request.body.username, request.body.password)
+        .then((server_response) =>{
+            res.success(request, response, server_response, 201)  //mejor manera de contestar, parametriza todo esto
+
+        })
+        .catch(e => {
+            res.error(request, response, "Información inválida", 400, "Error en el logueado")
+
+        })
+
+});
 
 module.exports = router  // nos traemos esas rutas y las lleva al router
