@@ -11,6 +11,7 @@ import { SharedModule } from './shared/shared.module';
 import { ContactComponent } from './contact/contact.component';
 import { MaterialModule } from './material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ArtistModule } from './artist/artist.module';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     MaterialModule,
     ReactiveFormsModule,
+    ArtistModule,
 
   ],
   providers: [],
