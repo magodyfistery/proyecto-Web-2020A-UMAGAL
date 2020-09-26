@@ -24,6 +24,10 @@ const routes: Routes = [
           loadChildren: () => import('./exhibition/exhibition.module').then(m => m.ExhibitionModule)
         },
         {
+          path: 'artist',  // significa que no hubo match
+          loadChildren: () => import('./artist/artist-routing.module').then(m => m.ArtistRoutingModule)
+        },
+        {
           path: 'contact',  // significa que no hubo match
           component: ContactComponent
         },

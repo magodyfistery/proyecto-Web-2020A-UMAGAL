@@ -12,6 +12,7 @@ import { ContactComponent } from './contact/contact.component';
 import { MaterialModule } from './material/material.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ArtistModule } from './artist/artist.module';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -20,6 +21,7 @@ import { ArtistModule } from './artist/artist.module';
     BaseLayoutComponent,
     PageNotFoundComponent,
     ContactComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
