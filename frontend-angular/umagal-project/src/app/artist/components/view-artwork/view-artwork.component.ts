@@ -12,14 +12,19 @@ import { Router, ActivatedRoute, Params } from '@angular/router';
   styleUrls: ['./view-artwork.component.scss']
 })
 export class ViewArtworkComponent implements OnInit {
+  // public get authService(): AuthService {
+  //   return this._authService;
+  // }
+  // public set authService(value: AuthService) {
+  //   this._authService = value;
+  // }
 
 
   public url:string;
   public project:Artwork;
   public confirm:boolean;
-
-  constructor(
-    private authService: AuthService,
+  public authService: AuthService;
+  constructor(    
     private _projectService:ArtworkService,
     private _router:Router,
     private _route:ActivatedRoute
@@ -33,6 +38,10 @@ export class ViewArtworkComponent implements OnInit {
       let id=params.id;
       this.getProject(id);
     });
+  }
+
+  getAcces():Boolean{
+    return this.authService.isAdminLoggedIn()
   }
 
   getProject(id){
