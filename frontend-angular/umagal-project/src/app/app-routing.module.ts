@@ -34,12 +34,10 @@ const routes: Routes = [
         },
       ]
   },
-  /*
   {
     path: 'admin',  // significa que no hubo match
-    canActivate: [AdminGuard],
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
-  },*/
+  },
   {  // este se deja para el final
     path: '**',  // significa que no hubo match
     component: PageNotFoundComponent,  // se puede redirigir a 404 o al home!

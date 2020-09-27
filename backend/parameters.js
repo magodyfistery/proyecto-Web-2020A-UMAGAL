@@ -3,7 +3,8 @@ const mongoDBTablesNames = {
     client: "client",
     artist: "artist",
     exhibition: "exhibition",
-    contact: "contact"
+    contact: "contact",
+    admin: "admin"
 }
 
 const MESSAGES_WELL_KNOWED = {
