@@ -49,16 +49,11 @@ app.get("/api/videos", function(req, res){
       //res.send({status:1, data: exhibitions, msg:"Hola!, te saludo desde el servidor"})
       res.success(req, res, resolve({status: 1, data: exhibitions,  msg: "Ferias consultadas"}), 201)  //mejor manera de contestar, parametriza todo esto
 
-      //resolve({status: 1, data: exhibitions,  msg: "Ferias consultadas"})  // status 1= todo correcto
 
 
-  })
-  .catch(e=>{
-      console.log(e)
-      resolve(messagesWellKnowed.MESSAGE_ERROR_DB)  //no existe
-  })
-})
-*/
+
+
+
 app.listen(config.port, function(){
     console.log("La aplicación está escuchando en " + config.host + ":" + config.port);
 });
