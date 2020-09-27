@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router'
 
-import { PhotoService } from '../../../services/photo.service'
-import {Photo} from '../../../interfaces/Photo'
+import { Artwork } from "../../../core/models/artwork";
+import { ArtworkService } from '../../../core/services/artwork/artwork.service';
+
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-edit-artwork',
@@ -11,34 +12,51 @@ import {Photo} from '../../../interfaces/Photo'
 })
 export class EditArtworkComponent implements OnInit {
 
-  id: string;
-  photo: Photo;
+  public url:string;
+  public project:Artwork;
+  public confirm:boolean;
 
   constructor(
-    private activatedRoute: ActivatedRoute,
-    private photoService: PhotoService,
-    private router: Router
-  ) { }
+    private _projectService:ArtworkService,
+    private _router:Router,
+    private _route:ActivatedRoute
+  ) {
+    this.url='http://localhost:3000/api/';
+    this.confirm=false;
+   }
 
-  ngOnInit() {
-    this.activatedRoute.params.subscribe(params => {
-      this.id = params['id'];
-      this.photoService.getPhoto(this.id)
-        .subscribe(
-          res => {
-            this.photo = res;
-          },
-          err => console.log(err)
-        )
+  ngOnInit(): void {
+    this._route.params.subscribe(params=>{
+      let id=params.id;
+      this.getProject(id);
     });
   }
 
-  updatePhoto(title: HTMLInputElement, description: HTMLInputElement, price:HTMLInputElement, availability:HTMLInputElement): boolean {
-    this.photoService.updatePhoto(this.photo._id, title.value, description.value, price.value, availability.value)
-      .subscribe(res => {
-        console.log(res);
-        this.router.navigate(['/productos']);
-      });
-    return false;
+  getProject(id){
+    this._projectService.getProject(id).subscribe(
+      response=>{
+        this.project=response.project;
+      },
+      error=>{
+        console.log(<any>error);
+      }
+    );
+  }
+
+  setConfirm(confirm){
+    this.confirm=confirm;
+  }
+
+  deleteProject(id){
+    this._projectService.deleteProject(id).subscribe(
+      response=>{
+        if(response.project){
+          this._router.navigate(['../../artist/listArtwork']);
+        }
+      },
+      error=>{
+        console.log(<any>error);
+      }
+    );
   }
 }

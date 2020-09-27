@@ -20,9 +20,9 @@ var controller={
         var params=req.body;
         project.name=params.name;
         project.description=params.description;
-        project.category=params.category;
+        project.username=params.username;
         project.year=params.year;
-        project.langs=params.langs;
+        project.id_artist=params.id_artist;
         project.image=null;
 
         project.save((err,projectStored)=>{
@@ -31,10 +31,6 @@ var controller={
             return res.status(200).send({project:projectStored});
         });
         
-       /*return res.status(200).send({
-           project:project,
-           message:"metodo save"
-       });*/
     }, 
     getProject:function(req,res){
         var projectId=req.params.id;

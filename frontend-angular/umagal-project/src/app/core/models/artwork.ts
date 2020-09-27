@@ -3,9 +3,9 @@ export class Artwork{
     public _id:string,
     public name:string,
     public description:string,
-    public category:string,
+    public username:string,
     public year:Number,
-    public langs:string,
+    public id_artist:string,
     public image:string
     ){}
 }

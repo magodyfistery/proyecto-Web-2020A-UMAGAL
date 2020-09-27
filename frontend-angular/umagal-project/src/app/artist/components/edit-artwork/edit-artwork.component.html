@@ -1,33 +1,20 @@
-<div class="row" *ngIf="!photo; else main_content">
-    <h1>Loading...</h1>
-</div>
-<ng-template #main_content>
-    <div class="row">
-        <div class="col-md-5">
-            <div class="card">
-                <img [src]="'http://localhost:4000/' + photo.imagePath" class="img-fluid">
-            </div>
-        </div>
-        <div class="col-md-7">
-            <div class="card">
-                <form class="card-body" (submit)="updatePhoto(title, description, price, availability)">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Nombre del helado" [value]="photo.title" #title>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" class="form-control" placeholder="Precio del helado" [value]="photo.price" #price required>
-                    </div>
-                    <div class="form-group">
-                        <textarea rows="2" class="form-control" placeholder="Descripcion del helado" [value]="photo.description" #description></textarea>
-                    </div>
-                    <div class="form-group">
-                        <input type="number" class="form-control" placeholder="Disponibilidad del helado" [value]="photo.availability" #availability required>
-                    </div>
-                    <button class="btn btn-primary btn-block">
-                        Actualizar
-                    </button>
-                </form>
-            </div>
-        </div>
+<div class="container" *ngIf="project">
+    <div class="image" *ngIf="project.image">
+        <img src="{{url+'get-image/'+project.image}}" *ngIf="project.image"/>
     </div>
-</ng-template>
+    <div class="data">
+        <h1>Nombre: {{project.name}} - {{project.year}}</h1>
+        <h3>Descripcion: {{project.description}}</h3>
+        <p>Creador: {{project.username}}</p>
+        <p>id: {{project.id_artist}}</p>
+        <p *ngIf="confirm==false">
+            <!-- <a [routerLink]="['/editar-proyecto',project._id]" class="button-edit">Editar</a> -->
+            <a (click)="setConfirm(true)" class="button-delete">Borrar</a>
+        </p>
+        <p *ngIf="confirm==true">
+            <span class="confirm">Estas seguro de eliminar el proyecto?</span><br/>
+            <a (click)="setConfirm(false)" class="button-edit">Cancelar</a>
+            <a (click)="deleteProject(project._id)" class="button-delete">Eliminar definitivamente</a>
+        </p>
+    </div>
+</div>

@@ -2,18 +2,18 @@
     <h2>{{title}}</h2>
     <div class="message success" *ngIf="status=='success'">
         El proyecto se ha creado correctamente puedes verlo 
-        <a [routerLink]="['/proyecto',saveProject._id]"> aquí</a>.
+        <a [routerLink]="['/editArtwork',saveProject._id]"> aquí</a>.
     </div>
     <div class="message success" *ngIf="status=='failed'">
         El proyecto no se ha podido crear 
     </div>
-    <!-- <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)"> -->
-        <!-- <p>
+    <!-- <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)"> 
+        <p>
             <label for="name">Nombre</label>
             <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required/>
             <span class="form_error" *ngIf="name.touched && !name.valid">
                 El nombre es obligatorio
             </span>
         </p> 
-    </form>-->
+    </form> -->
 </div>

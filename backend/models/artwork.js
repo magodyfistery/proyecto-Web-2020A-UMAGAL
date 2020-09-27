@@ -5,8 +5,8 @@ var Schema=mongoose.Schema;
 var ProjectSchema=Schema({
     name: String,
     description: String,
-    category: String,
-    langs:String,
+    username: String,//category
+    id_artist:String,//langs
     year:Number,
     image:String
 });
