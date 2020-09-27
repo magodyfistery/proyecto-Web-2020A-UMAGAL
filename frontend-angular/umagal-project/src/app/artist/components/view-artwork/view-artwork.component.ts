@@ -5,22 +5,18 @@ import { ArtworkService } from '../../../core/services/artwork/artwork.service';
 
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
+
 @Component({
-  selector: 'app-edit-artwork',
-  templateUrl: './edit-artwork.component.html',
-  styleUrls: ['./edit-artwork.component.scss']
+  selector: 'app-view-artwork',
+  templateUrl: './view-artwork.component.html',
+  styleUrls: ['./view-artwork.component.scss']
 })
-export class EditArtworkComponent implements OnInit {
+export class ViewArtworkComponent implements OnInit {
+
 
   public url:string;
   public project:Artwork;
   public confirm:boolean;
-
-  public title:string;
-  public saveProject;
-  public status:string;
-  public filesToUpload:Array<File>;
-  
 
   constructor(
     private _projectService:ArtworkService,
@@ -48,17 +44,16 @@ export class EditArtworkComponent implements OnInit {
       }
     );
   }
-  
-  onSubmit(form){
-    this._projectService.updateProject(this.project).subscribe(
+
+  setConfirm(confirm){
+    this.confirm=confirm;
+  }
+
+  deleteProject(id){
+    this._projectService.deleteProject(id).subscribe(
       response=>{
-        if(response.project){         
-            this.saveProject=response.project;
-            this.status='success';
-            form.reset();          
-            this._router.navigate(['../../artist/listArtwork']);
-        }else{
-          this.status='failed';
+        if(response.project){
+          this._router.navigate(['../../artist/listArtwork']);
         }
       },
       error=>{
