@@ -11,8 +11,8 @@ import { VideosService } from '../core/services/video/videos.service';
 export class VideoComponent implements OnInit {
 
   dangerousVideoUrl: string
-  videosUrl: Array<SafeResourceUrl> = []
-  xd: string
+  videosArtista:Array<SafeResourceUrl> = []
+  videosUrl = []
   artists: Array<Artist> 
   
 
@@ -28,15 +28,18 @@ export class VideoComponent implements OnInit {
   getVideos(){
     this.videoService.getVideos()
       .subscribe(response => {
-        console.log("Hola")
         if(response.body.status == 1){
           if(response.body.data.length > 0){
             this.artists = response.body.data;
             for(var artist in this.artists){
+              this.videosArtista=[]
               for(var video in this.artists[artist].videos){
-                this.videosUrl.push(this.sanitizer.bypassSecurityTrustResourceUrl(this.artists[artist].videos[video].url))
+                this.videosArtista.push(this.sanitizer.bypassSecurityTrustResourceUrl(this.artists[artist].videos[video].url))
               }
+              this.videosUrl.push(this.videosArtista)
             }
+            console.log(this.videosUrl);
+            
           }else{
             alert("No hay videos de artistas")
           }
