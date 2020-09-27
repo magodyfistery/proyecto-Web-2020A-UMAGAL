@@ -6,10 +6,11 @@ import { MaterialModule } from '../material/material.module';
 
 import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
+import { ExhibitionComponent } from './components/exhibition/exhibition.component';
 
 
 @NgModule({
-  declarations: [FairComponent],
+  declarations: [FairComponent, ExhibitionComponent],
   imports: [
     CommonModule,
     ExhibitionRoutingModule,

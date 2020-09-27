@@ -16,4 +16,9 @@ export class ExhibitionService {
   getFairFromYear(year: number){
     return this.http.get<UmagalResponse>(environment.url_api + '/exhibition/fairs/'+year);
   }
+
+  getExhibitions(){
+    return this.http.get<UmagalResponse>(environment.url_api + '/exhibition');
+  }
+  
 }

@@ -23,7 +23,25 @@ function getFairFromYear(filter){
     })
 }
 
+function getExhibitions(){
+    return new Promise((resolve, reject) =>{
+
+        ModelExhibition.find({is_fair : false})
+            .then((exhibitions) => {
+
+                resolve({status: 1, data: exhibitions,  msg: "Exhibiciones consultadas"})  // status 1= todo correcto
+
+
+            })
+            .catch(e=>{
+                console.log(e)
+                resolve(messagesWellKnowed.MESSAGE_ERROR_DB)  //no existe
+            })
+
+    })
+}
 
 module.exports = {
-    getFairFromYear
+    getFairFromYear,
+    getExhibitions
 }
