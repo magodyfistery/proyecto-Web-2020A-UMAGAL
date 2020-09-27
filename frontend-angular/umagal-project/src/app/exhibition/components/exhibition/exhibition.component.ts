@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Exhibition } from 'src/app/core/models/exhibition.model';
 import { ExhibitionService } from 'src/app/core/services/exhibition/exhibition.service';
-import { UmagalResponse } from 'src/app/core/models/umagal-response.model';
+import { Exhibition } from 'src/app/core/models/exhibition.model';
+
 
 @Component({
   selector: 'app-exhibition',
@@ -10,14 +10,31 @@ import { UmagalResponse } from 'src/app/core/models/umagal-response.model';
 })
 export class ExhibitionComponent implements OnInit {
 
- 
-  fair: Exhibition;
-
+  
+  exhibiciones : Array<Exhibition>
   constructor(
     private exhibitionService: ExhibitionService
+
   ) { }
 
   ngOnInit(): void {
+    this.getExhibitions()
   }
 
+  getExhibitions() {
+    this.exhibitionService.getExhibitions()
+      .subscribe(response => {
+        console.log(response)
+        if(response.body.status == 1){
+          if(response.body.data.length > 0){
+            this.exhibiciones = response.body.data;
+            console.log(this.exhibiciones)
+          }else{
+            alert("No hay ferias de ese año")
+          }
+            // pueden venir muchas ferias
+        }
+
+      });
+  }
 }

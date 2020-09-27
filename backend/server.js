@@ -6,6 +6,7 @@ const db = require('./db');
 const router = require('./network/routes');//require('./components/message/network')  //recolecta con export
 const config = require("./config");
 var cors = require('cors')
+const ModelArtist = require('./business_models/artist')
 db(config.dbUrl)
 
 app.use(cors())  // DEBUG SOLAMENTE, en producción amoldar a rutas específicas
@@ -26,14 +27,8 @@ app.get("/", function(req, res){
 
 })
 
-
 app.use('/api', require('./routes/artwork'));
-
-
-
-
-
-
 app.listen(config.port, function(){
     console.log("La aplicación está escuchando en " + config.host + ":" + config.port);
 });
+

@@ -29,6 +29,30 @@ function getAllValidYears(){
 
         ModelExhibition.find()
             .then((fairs) => {
+                console.log("Fairs: ", fairs.length)
+                var years = []
+                for(var i=0; i< fairs.length; i++){
+                  const year = fairs[i].date.substring(0,4)
+                  console.log(year)
+                  if(!years.includes(year)){
+                    years.push(year)
+                  }
+                }
+                resolve({status: 1, data: years.sort().reverse(),  msg: "Años consultados"})  // status 1= todo correcto
+            })
+            .catch(e=>{
+                console.log(e)
+                resolve(messagesWellKnowed.MESSAGE_ERROR_DB)  //no existe
+            })
+
+    })
+}
+
+function getExhibitions(){
+    return new Promise((resolve, reject) =>{
+
+        ModelExhibition.find()
+            .then((fairs) => {
 
                 console.log("Fairs: ", fairs.length)
 
@@ -124,5 +148,6 @@ module.exports = {
     deleteFairByName,
     addFair,
     updateFair,
-    getAllValidYears
+    getAllValidYears,
+    getExhibitions
 }

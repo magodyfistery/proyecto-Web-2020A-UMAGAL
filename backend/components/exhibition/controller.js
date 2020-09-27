@@ -37,6 +37,11 @@ function getFairFromYear(year){
 
 }
 
+function getExhibitions(){
+    return new Promise((resolve, reject) =>{
+        resolve(store.getExhibitions())
+    })
+}
 function deleteFair(name){
     //
     return new Promise((resolve, reject) =>{
@@ -126,5 +131,6 @@ module.exports = {
     addFair,
     updateFair,
     getFairs,
-    getValidYears
+    getValidYears,
+    getExhibitions
 }

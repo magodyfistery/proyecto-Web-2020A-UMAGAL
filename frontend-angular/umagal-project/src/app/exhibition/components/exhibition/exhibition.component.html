@@ -1,3 +1,12 @@
+<div class="box-left center" *ngFor="let exhibition of exhibiciones">
+    <h2>{{exhibition.name}}</h2>
+    <h3>Fecha: {{exhibition.date}}</h3>
+    <h4>Descripción: {{exhibition.description}}</h4>
+    <img class="image-exhibition center"
+    src="{{exhibition.url_principal_img}}" alt=""
+    />
+    <br/>
+</div>
 
 <div class="center">
     <h1>

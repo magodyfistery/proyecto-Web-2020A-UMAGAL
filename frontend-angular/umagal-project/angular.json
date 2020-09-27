@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "umagal-project"
+  "defaultProject": "umagal-project",
+  "cli": {
+    "analytics": "64f7c7d0-e199-4d2f-980f-a091b4993953"
+  }
 }

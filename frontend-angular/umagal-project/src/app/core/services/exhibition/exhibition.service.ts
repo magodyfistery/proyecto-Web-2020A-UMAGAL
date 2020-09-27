@@ -31,6 +31,11 @@ export class ExhibitionService {
     return this.http.get<UmagalResponse>(environment.url_api + '/exhibition/fairs/'+year);
   }
 
+  getExhibitions(){
+    return this.http.get<UmagalResponse>(environment.url_api + '/exhibition');
+  }
+  
+
   getFairs(){
     return this.http.get<UmagalResponse>(environment.url_api + '/exhibition/fairs/');
   }
