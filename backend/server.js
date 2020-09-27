@@ -27,6 +27,7 @@ app.get("/", function(req, res){
 
 })
 
+app.use('/api', require('./routes/artwork'));
 app.listen(config.port, function(){
     console.log("La aplicación está escuchando en " + config.host + ":" + config.port);
 });

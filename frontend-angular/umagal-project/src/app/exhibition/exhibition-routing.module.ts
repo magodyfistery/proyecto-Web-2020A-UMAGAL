@@ -3,7 +3,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { ExhibitionComponent } from './components/exhibition/exhibition.component';
 import { FairComponent } from './components/fair/fair.component';
 
-
 const routes: Routes = [
   {
     path: 'fairs',

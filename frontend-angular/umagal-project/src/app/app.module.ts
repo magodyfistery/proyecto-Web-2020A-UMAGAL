@@ -10,8 +10,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { ContactComponent } from './contact/contact.component';
 import { MaterialModule } from './material/material.module';
-import { ReactiveFormsModule } from '@angular/forms';
 import { VideoComponent } from './video/video.component';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
+import { ArtistModule } from './artist/artist.module';
+import { FilterPipe } from './pipes/filter.pipe';
 
 
 @NgModule({
@@ -20,7 +22,6 @@ import { VideoComponent } from './video/video.component';
     BaseLayoutComponent,
     PageNotFoundComponent,
     ContactComponent,
-    VideoComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +31,8 @@ import { VideoComponent } from './video/video.component';
     SharedModule,
     MaterialModule,
     ReactiveFormsModule,
-
+    ArtistModule,
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
