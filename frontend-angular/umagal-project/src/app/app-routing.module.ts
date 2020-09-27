@@ -3,6 +3,7 @@ import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 import { BaseLayoutComponent } from './base-layout/base-layout.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ContactComponent } from './contact/contact.component';
+import { VideoComponent } from './video/video.component';
 
 
 const routes: Routes = [
@@ -24,17 +25,23 @@ const routes: Routes = [
           loadChildren: () => import('./exhibition/exhibition.module').then(m => m.ExhibitionModule)
         },
         {
+          path: 'artist',  // significa que no hubo match
+          loadChildren: () => import('./artist/artist-routing.module').then(m => m.ArtistRoutingModule)
+        },
+        {
           path: 'contact',  // significa que no hubo match
           component: ContactComponent
         },
+        {
+          path: 'videos',
+          component: VideoComponent
+        },
       ]
   },
-  /*
   {
     path: 'admin',  // significa que no hubo match
-    canActivate: [AdminGuard],
     loadChildren: () => import('./admin/admin.module').then(m => m.AdminModule)
-  },*/
+  },
   {  // este se deja para el final
     path: '**',  // significa que no hubo match
     component: PageNotFoundComponent,  // se puede redirigir a 404 o al home!

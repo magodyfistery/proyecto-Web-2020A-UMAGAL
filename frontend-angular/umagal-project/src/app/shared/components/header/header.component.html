@@ -12,15 +12,21 @@
 
 
     <div fxShow="true" fxHide.lt-md="true"> <!--Respeta el ancho pero sigue alineado-->
+
+      <!--
         <a mat-button routerLink="/artists" routerLinkActive="active">Artistas</a>
-        <a mat-button routerLink="/exhibition" routerLinkActive="active">Exhibiciones</a>
+        
         <a mat-button routerLink="/videos" routerLinkActive="active">Videos</a>
-        <a mat-button routerLink="/exhibition/fairs" routerLinkActive="active">Ferias</a>
         <a mat-button routerLink="/galleries" routerLinkActive="active">Galerias</a>
+        -->
+        <a mat-button routerLink="/exhibition" routerLinkActive="active">Exhibiciones</a>
+        <a mat-button routerLink="/exhibition/fairs" routerLinkActive="active">Ferias</a>
         <a mat-button routerLink="/contact" routerLinkActive="active">Contacto</a>
         <div *ngIf="!logged_in" class="div-nav">
             <a mat-button routerLink="/account/login" routerLinkActive="active"><b> Iniciar sesión </b></a>
+            <!--
             <a mat-button routerLink="/account/registration" routerLinkActive="active"><b> Registrarse </b></a>
+            -->
         </div>
 
         <div *ngIf="logged_in" class="div-nav">

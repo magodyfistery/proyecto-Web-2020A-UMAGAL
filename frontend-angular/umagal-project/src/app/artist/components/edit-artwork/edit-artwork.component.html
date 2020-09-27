@@ -1,0 +1,57 @@
+<div class="row" *ngIf="!project.image; else main_content">
+    <h1>Loading...</h1>
+</div>
+<ng-template #main_content>
+    <div class="container" *ngIf="project">
+        <div class="row">
+
+            <div class="col-md-5">
+                <div class="card" *ngIf="project.image">
+                    <img src="{{url+'get-image/'+project.image}}" class="img-fluid">
+                </div>
+            </div>
+
+            <div class="col-md-7">
+                <div class="card">
+                    <form class="card-body" #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" class="form-control" placeholder="algo1" [value]="project.name" name="name" #name="ngModel" [(ngModel)]="project.name" required/>
+                            <span class="form_error" *ngIf="name.touched && !name.valid">
+                                El nombre es obligatorio
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="year">Año de lanzamiento</label>
+                            <input type="number" class="form-control" placeholder="algo2" [value]="project.year" name="year" #year="ngModel" [(ngModel)]="project.year"/>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Descripción</label>
+                            <input type="text" class="form-control" placeholder="algo3" [value]="project.description" name="description" #description="ngModel" [(ngModel)]="project.description" required/>
+                            <span class="form_error" *ngIf="description.touched && !description.valid">
+                                La descripción es obligatoria
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" placeholder="username" [value]="project.username" name="username" #username="ngModel" [(ngModel)]="project.username" required/>
+                            <span class="form_error" *ngIf="username.touched && !username.valid">
+                                La username es obligatoria
+                            </span>
+                        </div>
+                        <div class="form-group">
+                            <label for="id_artist">Id del Artista</label>
+                            <input type="text" class="form-control" placeholder="username" [value]="project.id_artist" name="id_artist" #id_artist="ngModel" [(ngModel)]="project.id_artist" required/>
+                            <span class="form_error" *ngIf="id_artist.touched && !id_artist.valid">
+                                Los id son obligatorios
+                            </span>
+                        </div>
+                        <button class="btn btn-primary btn-block" type="submit">
+                            Actualizar
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</ng-template>

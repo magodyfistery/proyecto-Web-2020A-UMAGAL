@@ -1,0 +1,9 @@
+<div class="box-left center" *ngFor="let artist of artists; index as in">
+    <hr>
+    <h2>{{artist.username}}</h2>
+    <div *ngFor="let video of artist.videos; index as i">
+        <br/>
+        <h3>{{video.name}}</h3>
+        <iframe class="e2e-iframe-trusted-src" width="560" height="315" [src]="videosUrl[in][i]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+</div>

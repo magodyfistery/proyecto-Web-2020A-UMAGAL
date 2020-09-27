@@ -1,6 +1,7 @@
 //toda la lógica de almacenamiento
 const ModelClient = require('../../business_models/client')
 const ModelArtist = require('../../business_models/artist')
+const ModelAdmin = require('../../business_models/admin')
 const messagesWellKnowed = require("../../parameters").MESSAGES_WELL_KNOWED
 
 function authAndRetrieveClient(user){
@@ -55,7 +56,35 @@ function authAndRetrieveArtist(username, password){
     })
 }
 
+
+function authAndRetrieveAdmin(username, password){
+
+    return new Promise((resolve, reject) =>{
+
+        let filter = {username: username, password: password}
+
+        ModelAdmin.findOne(filter)
+            .then((admin) => {
+
+                // console.log("Artista consultado: ", artist)
+
+                if(admin == null){
+                  resolve(messagesWellKnowed.MESSAGE_INVALID_CREDENTIALS)
+                }else{
+                  resolve({status: 1, data:[admin],  msg: "Credenciales correctas"})  // status 1= todo correcto
+                }
+
+            })
+            .catch(e=>{
+                console.log(e)
+                resolve(messagesWellKnowed.MESSAGE_ERROR_DB)  //no existe
+            })
+
+    })
+}
+
 module.exports = {
     authAndRetrieveClient,
-    authAndRetrieveArtist
+    authAndRetrieveArtist,
+    authAndRetrieveAdmin
 }

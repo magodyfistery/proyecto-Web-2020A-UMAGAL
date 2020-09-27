@@ -1,0 +1,18 @@
+<div class="container p-4">
+    <div class="row">
+        <div class="col-md-4 p-4" *ngFor="let photo of projects" class="project">
+            <div class="card card-photo" [routerLink]="['../viewArtwork', photo._id]" >            
+                <img src="{{url+'get-image/'+photo.image}}" *ngIf="photo.image" class="img-card-top w-100">
+                <div class="card-header">
+                    {{photo.name}}
+                </div>
+                <div class="card-body">
+                    <h3>$ {{photo.username}}</h3>
+                </div>
+                <div class="card-body">
+                    <p>{{photo.description}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
