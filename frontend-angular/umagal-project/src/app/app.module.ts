@@ -10,7 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { SharedModule } from './shared/shared.module';
 import { ContactComponent } from './contact/contact.component';
 import { MaterialModule } from './material/material.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { ArtistModule } from './artist/artist.module';
 import { FilterPipe } from './pipes/filter.pipe';
 
@@ -32,7 +32,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     MaterialModule,
     ReactiveFormsModule,
     ArtistModule,
-
+    FormsModule 
   ],
   providers: [],
   bootstrap: [AppComponent]

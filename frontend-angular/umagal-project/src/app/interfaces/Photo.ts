@@ -6,3 +6,4 @@ export interface Photo {
     availability:Number;
     imagePath: string;
 }
+

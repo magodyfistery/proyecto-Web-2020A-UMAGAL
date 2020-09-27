@@ -1,16 +1,14 @@
-<div class="row">
-    <div class="col-md-4 p-4" *ngFor="let photo of photos">
-        <div class="card card-photo" (click)="selectedCard(photo._id)">            
-            <img [src]="'http://localhost:4000/' + photo.imagePath" class="img-card-top w-100">
-            <div class="card-header">
-                {{photo.title}}
-            </div>
-            <div class="card-body">
-                <h3>$ {{photo.price}}</h3>
-            </div>
-            <div class="card-body">
-                <p>{{photo.description}}</p>
-            </div>
-        </div>
-    </div>
+<div class="container">
+    <h2>Proyectos</h2>
+    <ul>
+        <li *ngFor="let project of projects" class="project">
+            <a [routerLink]="['/proyecto', project._id]">
+                <div class="image">
+                    <img src="{{url+'get-image/'+project.image}}" *ngIf="project.image"/>
+                </div>
+                <h3>{{project.name}}</h3>
+                <p>{{project.category}}</p>
+            </a>
+        </li>
+    </ul>
 </div>

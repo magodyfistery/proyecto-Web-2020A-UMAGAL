@@ -2,13 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 
 import {Photo} from '../interfaces/Photo'
-
+// esto no esta ciendo usado
 @Injectable({
   providedIn: 'root'
 })
 export class PhotoService {
 
-  URI = 'http://localhost:3000/api/photos';
+  URI = 'http://localhost:3000/api/projects';
 
   constructor(private http: HttpClient) { }
 

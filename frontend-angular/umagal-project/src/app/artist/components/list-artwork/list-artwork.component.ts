@@ -1,35 +1,42 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'
+import { PhotoGallery } from 'src/app/core/models/photo-gallery.model';
 
-import { PhotoService } from '../../../services/photo.service'
-import { Photo } from '../../../interfaces/Photo'
+import { Artwork } from "../../../core/models/artwork";
+import { ArtworkService } from '../../../core/services/artwork/artwork.service';
+
 
 @Component({
   selector: 'app-list-artwork',
   templateUrl: './list-artwork.component.html',
-  styleUrls: ['./list-artwork.component.scss']
+  styleUrls: ['./list-artwork.component.scss'],
+  providers:[ArtworkService]
 })
 export class ListArtworkComponent implements OnInit {
 
-  photos: Photo[] = [];
+  public projects:Artwork[];
+  public url:string;
 
   constructor(
-    private photoService: PhotoService,
-    private router: Router 
-  ) { }
-
-  ngOnInit() {
-    this.photoService.getPhotos()
-      .subscribe(
-        res => {
-          this.photos = res;
-        },
-        err => console.log(err)
-      )
+    private _projectService:ArtworkService
+  ) { 
+    this.url='http://localhost:3000/api/';
   }
 
-  selectedCard(id: string) {
-    this.router.navigate(['/artwork', id]);
+  ngOnInit(): void {
+    this.getProjects();
+  }
+
+  getProjects(){
+    this._projectService.getProjects().subscribe(
+      response=>{
+        if(response.projects){
+          this.projects=response.projects;
+        }
+      },
+      error=>{
+        console.log(<any>error);
+      }
+    );
   }
 
 }
