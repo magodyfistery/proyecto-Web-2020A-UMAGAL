@@ -1,9 +1,9 @@
 <div class="box-left center" *ngFor="let artist of artists">
     <h2>{{artist.username}}</h2>
-    <div *ngFor="let video of artist.videos" >
+    <div *ngFor="let video of artist.videos; index as i">
         <h3>{{video.name}}</h3>
         <h2>{{video.url}}</h2>
         <br/>
-        <iframe class="e2e-iframe-trusted-src" width="560" height="315" [src]="videoUrl" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe class="e2e-iframe-trusted-src" width="560" height="315" [src]="videosUrl[i]" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     </div>
 </div>
