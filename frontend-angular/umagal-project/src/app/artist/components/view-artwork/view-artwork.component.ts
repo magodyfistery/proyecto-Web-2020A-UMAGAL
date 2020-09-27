@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { AuthService } from 'src/app/core/services/auth/auth.service';
 import { Artwork } from "../../../core/models/artwork";
 import { ArtworkService } from '../../../core/services/artwork/artwork.service';
 
@@ -19,6 +19,7 @@ export class ViewArtworkComponent implements OnInit {
   public confirm:boolean;
 
   constructor(
+    private authService: AuthService,
     private _projectService:ArtworkService,
     private _router:Router,
     private _route:ActivatedRoute
