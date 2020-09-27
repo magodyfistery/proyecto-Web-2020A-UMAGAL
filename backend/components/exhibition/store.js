@@ -23,16 +23,22 @@ function getFairFromYear(filter){
     })
 }
 
-function getExhibitions(){
-    return new Promise((resolve, reject) =>{
 function getAllValidYears(){
 
-        ModelExhibition.find({is_fair : false})
-            .then((exhibitions) => {
+    return new Promise((resolve, reject) =>{
 
-                resolve({status: 1, data: exhibitions,  msg: "Exhibiciones consultadas"})  // status 1= todo correcto
-
-
+        ModelExhibition.find()
+            .then((fairs) => {
+                console.log("Fairs: ", fairs.length)
+                var years = []
+                for(var i=0; i< fairs.length; i++){
+                  const year = fairs[i].date.substring(0,4)
+                  console.log(year)
+                  if(!years.includes(year)){
+                    years.push(year)
+                  }
+                }
+                resolve({status: 1, data: years.sort().reverse(),  msg: "Años consultados"})  // status 1= todo correcto
             })
             .catch(e=>{
                 console.log(e)
@@ -42,6 +48,7 @@ function getAllValidYears(){
     })
 }
 
+function getExhibitions(){
     return new Promise((resolve, reject) =>{
 
         ModelExhibition.find()
@@ -141,6 +148,6 @@ module.exports = {
     deleteFairByName,
     addFair,
     updateFair,
-    getAllValidYears
+    getAllValidYears,
     getExhibitions
 }

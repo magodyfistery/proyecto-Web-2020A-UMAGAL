@@ -40,22 +40,5 @@ app.get("/api/exhibition", function(req, res){
         resolve(messagesWellKnowed.MESSAGE_ERROR_DB)  //no existe
     })
 })
-/*
-app.get("/api/videos", function(req, res){
-  ModelArtist.find({})
-  .then((exhibitions) => {
-
-      // console.log("Fairs: ", fairs)
-      //res.send({status:1, data: exhibitions, msg:"Hola!, te saludo desde el servidor"})
-      res.success(req, res, resolve({status: 1, data: exhibitions,  msg: "Ferias consultadas"}), 201)  //mejor manera de contestar, parametriza todo esto
-
-
-
-
-
-
-app.listen(config.port, function(){
-    console.log("La aplicación está escuchando en " + config.host + ":" + config.port);
-});
 
 
