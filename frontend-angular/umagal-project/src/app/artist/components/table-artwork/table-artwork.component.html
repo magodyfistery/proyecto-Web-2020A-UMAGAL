@@ -1,0 +1,40 @@
+<div class="container">
+    <h1 class="text-center">Listado de Obras de arte</h1>
+    <button type="button" routerLink="../" class="btn btn-secondary btn-lg btn-block"> Subir una nueva obra </button>
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <input type="text" class="form-control" name="filterPost" placeholder="Search..." [(ngModel)]="filterPost">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th width="70" >Obra</th>
+              <th>Nombre</th>
+              <th>Descripción</th>
+              <th>Anio de creacion</th>
+              <!-- <th>Descripción</th> -->
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let photo of projects | filter:filterPost">
+              <td *ngIf="compara(photo.id_artist)"><img src="{{url+'get-image/'+photo.image}}" *ngIf="photo.image" class="img-card-top w-100" ></td>
+              <td *ngIf="compara(photo.id_artist)">{{photo.name}}</td>
+              <td *ngIf="compara(photo.id_artist)">{{photo.description}}</td>
+              <td *ngIf="compara(photo.id_artist)">{{photo.year}}</td>
+              <!-- <td>{{photo.description}}</td> -->
+              <td *ngIf="compara(photo.id_artist)">
+                <a [routerLink]="['../editArtwork',photo._id]" class="btn btn-secondary btn-sm">Editar</a>
+                <a (click)="deleteProject(photo._id)" class="btn btn-danger btn-sm">Eliminar</a>                
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>

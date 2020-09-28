@@ -16,6 +16,8 @@
         <a mat-button routerLink="/artists" routerLinkActive="active">Artistas</a>
         <a mat-button routerLink="/videos" routerLinkActive="active">Videos</a>
         <a mat-button routerLink="/galleries" routerLinkActive="active">Galerias</a>
+        -->
+        <a mat-button routerLink="/artist/listArtwork" routerLinkActive="active">Obras</a> 
         <a mat-button routerLink="/exhibition" routerLinkActive="active">Exhibiciones</a>
         <a mat-button routerLink="/exhibition/fairs" routerLinkActive="active">Ferias</a>
         <a mat-button routerLink="/contact" routerLinkActive="active">Contacto</a>
@@ -25,7 +27,7 @@
         </div>
 
         <div *ngIf="logged_in" class="div-nav">
-            <a mat-button routerLink="/account/my_account" routerLinkActive="active"><b> Mi cuenta </b></a>
+            <a mat-button routerLink="/artist/tableArtwork" routerLinkActive="active"><b> Mi cuenta </b></a>
             <a mat-button (click)="logOut()"><b> Cerrar sesión </b></a>
         </div>
 
