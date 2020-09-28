@@ -83,8 +83,20 @@ function authAndRetrieveAdmin(username, password){
     })
 }
 
+
+function registerClient(client){
+
+  console.log(client)
+
+  const myclient = new ModelClient(client)
+  return myclient.save()
+
+
+}
+
 module.exports = {
     authAndRetrieveClient,
     authAndRetrieveArtist,
-    authAndRetrieveAdmin
+    authAndRetrieveAdmin,
+    registerClient
 }

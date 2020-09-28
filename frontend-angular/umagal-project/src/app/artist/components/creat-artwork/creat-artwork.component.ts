@@ -74,7 +74,7 @@ export class CreatArtworkComponent implements OnInit {
         console.log(<any>error);
       }
     );
-    
+
   }
 
   onPhotoSelected(event: any): void {

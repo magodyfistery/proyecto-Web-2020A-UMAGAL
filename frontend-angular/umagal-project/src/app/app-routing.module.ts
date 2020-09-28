@@ -4,6 +4,7 @@ import { BaseLayoutComponent } from './base-layout/base-layout.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ContactComponent } from './contact/contact.component';
 import { VideoComponent } from './video/video.component';
+import { GalleryComponent } from './gallery/gallery.component';
 
 
 const routes: Routes = [
@@ -35,6 +36,10 @@ const routes: Routes = [
         {
           path: 'videos',
           component: VideoComponent
+        },
+        {
+          path: 'galleries',
+          component: GalleryComponent
         },
       ]
   },

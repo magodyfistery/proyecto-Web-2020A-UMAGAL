@@ -27,9 +27,9 @@ function getAllValidYears(){
 
     return new Promise((resolve, reject) =>{
 
-        ModelExhibition.find()
+        ModelExhibition.find({})
             .then((fairs) => {
-                console.log("Fairs: ", fairs.length)
+                //console.log("Fairs: ", fairs.length)
                 var years = []
                 for(var i=0; i< fairs.length; i++){
                   const year = fairs[i].date.substring(0,4)
@@ -51,24 +51,10 @@ function getAllValidYears(){
 function getExhibitions(){
     return new Promise((resolve, reject) =>{
 
-        ModelExhibition.find()
-            .then((fairs) => {
+        ModelExhibition.find({ is_fair: false })
+            .then((exhibitions) => {
 
-                console.log("Fairs: ", fairs.length)
-
-                var years = []
-
-                for(var i=0; i< fairs.length; i++){
-                  const year = fairs[i].date.substring(0,4)
-                  console.log(year)
-                  if(!years.includes(year)){
-                    years.push(year)
-                  }
-                }
-
-                resolve({status: 1, data: years.sort().reverse(),  msg: "Años consultados"})  // status 1= todo correcto
-
-
+                resolve({status: 1, data: exhibitions,  msg: "Años consultados"})  // status 1= todo correcto
             })
             .catch(e=>{
                 console.log(e)

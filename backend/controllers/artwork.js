@@ -30,8 +30,8 @@ var controller={
             if(!projectStored) return res.status(404).send({message:'No se ha podido guardar el proyecto'});
             return res.status(200).send({project:projectStored});
         });
-        
-    }, 
+
+    },
     getProject:function(req,res){
         var projectId=req.params.id;
         if(projectId==null) return res.status(404).send({message:'El proyecto no existe'});
@@ -62,7 +62,7 @@ var controller={
     },
     deleteProject:function(req,res){
         var projectId=req.params.id;
-        
+
         Project.findByIdAndRemove(projectId,(err,projectRemoved)=>{
             if(err) return res.status(500).send({message:'No se ha podido borrar el proyecto'});
             if(!projectRemoved) return res.status(404).send({message:'No se puede eliminar el proyecto'});
@@ -78,16 +78,17 @@ var controller={
                 return;
             }else{
                 var fileName=req.files.image.path;
-                console.log(fileName)                
-                fileName = fileName.split('/')            
-                Project.findByIdAndUpdate(projecId,{image:fileName[1]},{new:true},(err,projectUpdated)=>{
+                console.log(fileName)
+                var split_file_name = fileName.split('\\')
+                console.log("ID", projecId, split_file_name[1])     
+                Project.findByIdAndUpdate(projecId,{image:split_file_name[1]},{new:true},(err,projectUpdated)=>{
                     if(err) return res.status(500).send({message:'La imagen no se ha subido'});
                     if(!projectUpdated) return res.status(404).send({message:'El proyecto no existe y  no se subio la imagen'});
                     return res.status(200).send({project:projectUpdated});
                 });
-                
+
             }
-            
+
         }else{
             return res.status(200).send({message:fileName});
             console.log('here')

@@ -13,7 +13,8 @@ import { MaterialModule } from './material/material.module';
 import { VideoComponent } from './video/video.component';
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { ArtistModule } from './artist/artist.module';
-import { FilterPipe } from './pipes/filter.pipe';
+import { GalleryComponent } from './gallery/gallery.component';
+import { OurArtistsComponent } from './our-artists/our-artists.component';
 
 
 @NgModule({
@@ -22,6 +23,9 @@ import { FilterPipe } from './pipes/filter.pipe';
     BaseLayoutComponent,
     PageNotFoundComponent,
     ContactComponent,
+    VideoComponent,
+    GalleryComponent,
+    OurArtistsComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +36,7 @@ import { FilterPipe } from './pipes/filter.pipe';
     MaterialModule,
     ReactiveFormsModule,
     ArtistModule,
-    FormsModule 
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

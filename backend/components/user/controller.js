@@ -54,10 +54,36 @@ function authAdmin(username, password){
 
 }
 
+function register(username, password, name, date_of_birth, address, contact_phone){
+    //
+    return new Promise((resolve, reject) =>{
+        if(!username || !password){
+            console.error('userController: register: No hay username o password')
+            reject('Datos incorrectos')
+            return false
+        }
+
+        const client = {
+          username,
+          password,
+          name,
+          date_of_birth,
+          address,
+          contact_phone
+        }
+
+        resolve({status: 1, data:[store.registerClient(client)],  msg: "Registro correcto"})
+    })
+
+
+}
+
+
 
 //exportamos las funciones
 module.exports = {
     authClient,
     authArtist,
-    authAdmin
+    authAdmin,
+    register
 }
