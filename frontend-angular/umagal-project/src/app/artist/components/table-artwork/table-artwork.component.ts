@@ -49,7 +49,8 @@ export class TableArtworkComponent implements OnInit {
     this._projectService.deleteProject(id).subscribe(
       response=>{
         if(response.project){
-          this._router.navigate(['../../artist/listArtwork']);          
+          // this._router.navigate(['../artist/tableArtwork']);   
+          this.getProjects()       
         }
       },
       error=>{

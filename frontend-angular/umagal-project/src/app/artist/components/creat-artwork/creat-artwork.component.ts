@@ -53,13 +53,15 @@ export class CreatArtworkComponent implements OnInit {
               this.saveProject=result.project;
               this.status='success';
               console.log(result);
+              this.ngOnInit()
+              this._router.navigate(['../../artist']);
               form.reset();
             });
           }else{
             this.saveProject=response.project;
             this.status='success';
-            this._router.navigate(['../../artist/listArtwork']);
-            // form.reset();
+            this._router.navigate(['../../artist']);
+            form.reset();
           }
         }else{
           this.status='failed';
