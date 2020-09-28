@@ -16,6 +16,7 @@
         </div>
     </div>
 </div> -->
+<div *ngIf="projects.length > 0">
 <div [@photosAnimation]="projects.length">
   <div *ngFor="let project of projects" class="project">
       <div class="container p-5" *ngIf="project">
@@ -53,4 +54,5 @@
           </div>
       </div>
   </div>
+</div>
 </div>

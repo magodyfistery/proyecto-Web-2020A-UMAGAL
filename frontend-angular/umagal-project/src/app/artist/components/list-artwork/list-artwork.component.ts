@@ -18,7 +18,7 @@ import {
   templateUrl: './list-artwork.component.html',
   styleUrls: ['./list-artwork.component.scss'],
   providers:[ArtworkService],
-  animations : [
+  animations: [
     trigger('photosAnimation', [
       transition('* => *', [
         query('img',style({ transform: 'translateX(-100%)'})),
@@ -29,25 +29,28 @@ import {
       ])
     ])
   ]
+
 })
 export class ListArtworkComponent implements OnInit {
   ngOnInit(): void {
     
   }
 
-  public projects:Artwork[];
+  public projects = [];
   public url:string;
 
   constructor(
     private _projectService:ArtworkService
   ) {
     this.url='http://localhost:3000/api/';
+	this.getProjects();
   }
 
 
   getProjects(){
     this._projectService.getProjects().subscribe(
       response=>{
+		  console.log(response)
         if(response.projects){
           this.projects=response.projects;
         }
