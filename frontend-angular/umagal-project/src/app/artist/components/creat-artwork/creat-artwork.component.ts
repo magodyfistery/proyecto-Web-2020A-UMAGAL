@@ -30,7 +30,7 @@ export class CreatArtworkComponent implements OnInit {
     private _authService: AuthService,
     private _projectService:ArtworkService,
     private _uploadService:ArtworkUpService
-    ) { 
+    ) {
       this.title="Crear proyecto";
       this.project=new Artwork('','','','',2020,'','');
       this.url='http://localhost:3000/api/';
@@ -71,7 +71,7 @@ export class CreatArtworkComponent implements OnInit {
         console.log(<any>error);
       }
     );
-    
+
   }
 
   fileChangeEvent(fileInput:any){

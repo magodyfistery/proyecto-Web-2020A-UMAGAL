@@ -29,7 +29,7 @@ function getAllValidYears(){
 
         ModelExhibition.find({})
             .then((fairs) => {
-                console.log("Fairs: ", fairs.length)
+                //console.log("Fairs: ", fairs.length)
                 var years = []
                 for(var i=0; i< fairs.length; i++){
                   const year = fairs[i].date.substring(0,4)
@@ -53,7 +53,7 @@ function getExhibitions(){
 
         ModelExhibition.find({ is_fair: false })
             .then((exhibitions) => {
-                
+
                 resolve({status: 1, data: exhibitions,  msg: "Años consultados"})  // status 1= todo correcto
             })
             .catch(e=>{

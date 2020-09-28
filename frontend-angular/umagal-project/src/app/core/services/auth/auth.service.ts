@@ -73,4 +73,14 @@ export class AuthService {
     localStorage.removeItem("user_admin")
     this.user_admin = null
   }
+
+  registerClient(username: string, password: string, name: string,
+    date_of_birth: string, address: string, contact_phone: string
+  ){
+    return this.http.post<UmagalResponse>(environment.url_api + '/user/register', {
+      username: username, password: password,
+      name: name, date_of_birth: date_of_birth,
+      address: address, contact_phone: contact_phone
+    });
+  }
 }

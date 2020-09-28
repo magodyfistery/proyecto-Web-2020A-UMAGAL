@@ -1,0 +1,73 @@
+
+<form [formGroup]="formGroup" (ngSubmit)="registerClient($event)">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title> Registro de Cliente </mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input placeholder="Ingrese el nombre de usuario" formControlName="username" matInput type="text">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input placeholder="Ingrese la contraseña" formControlName="password" matInput type="password">
+          </mat-form-field>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input placeholder="Ingrese el nombre" formControlName="name" matInput type="text">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs">
+          <h3> Formato: (yyyy-mm-dd) </h3>
+          <mat-form-field>
+            <input placeholder="Ingrese su fecha de nacimiento en formato (yyyy-mm-dd)" formControlName="date_of_birth" matInput type="text">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input placeholder="Ingrese su direccion" formControlName="address" matInput type="text">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input placeholder="Ingrese un teléfono de contacto" formControlName="contact_phone" matInput type="number">
+          </mat-form-field>
+        </div>
+      </div>
+
+
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button [disabled]="formGroup.invalid" mat-raised-button type="submit"> Registrarse </button>
+    </mat-card-actions>
+  </mat-card>
+  <br><br>
+  <p class="center text-grey">¿Ya tiene una cuenta? <a mat-button routerLink="/login" routerLinkActive="active"> Iniciar sesión </a></p>
+  <br><br>
+
+
+
+</form>
