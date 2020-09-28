@@ -4,6 +4,7 @@ import { CreatArtworkComponent } from './components/creat-artwork/creat-artwork.
 import { EditArtworkComponent } from './components/edit-artwork/edit-artwork.component';
 import { ListArtworkComponent } from './components/list-artwork/list-artwork.component';
 import { ViewArtworkComponent } from './components/view-artwork/view-artwork.component';
+import { TableArtworkComponent } from './components/table-artwork/table-artwork.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'listArtwork',
     component: ListArtworkComponent
+  },
+  {
+    path: 'tableArtwork',
+    component: TableArtworkComponent
   }
 ];
 

@@ -8,9 +8,12 @@ import { ListArtworkComponent } from './components/list-artwork/list-artwork.com
 
 import { ReactiveFormsModule,FormsModule } from '@angular/forms';
 import { ViewArtworkComponent } from './components/view-artwork/view-artwork.component';
+import { TableArtworkComponent } from './components/table-artwork/table-artwork.component';
+
+import { FilterPipe } from '../pipes/filter.pipe';
 
 @NgModule({
-  declarations: [CreatArtworkComponent, EditArtworkComponent, ListArtworkComponent, ViewArtworkComponent],
+  declarations: [CreatArtworkComponent, EditArtworkComponent, ListArtworkComponent, ViewArtworkComponent, TableArtworkComponent,FilterPipe],
   imports: [
     CommonModule,
     ArtistRoutingModule,
