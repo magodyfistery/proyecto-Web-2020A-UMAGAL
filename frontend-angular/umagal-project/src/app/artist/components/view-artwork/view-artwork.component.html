@@ -1,25 +1,26 @@
-<div class="container" *ngIf="project">
+<div class="container center p-4" *ngIf="project">
     <div class="image" >
         <img src="{{url+'get-image/'+project.image}}" />
     </div>
-    <div class="data">
-        <h1>Nombre: {{project.name}} - {{project.year}}</h1>
-        <h3>Descripcion: {{project.description}}</h3>
-        <p>Creador: {{project.username}}</p>
-        <p>id: {{project.id_artist}}</p>
-        <div *ngIf="getAcces()">
+    <div class="data ">
+        <h2>Nombre:</h2>
+        <h1>{{project.name}}</h1>
+        <h2>Autor:</h2>
+        <h1>{{project.username}}</h1>
+        <h2>Año de Creación:</h2>
+        <h1>{{project.year}}</h1>
+        <h2>Descripción:</h2>
+        <h2>{{project.description}}</h2>
+        <!-- <div *ngIf="getAcces()">
             <p *ngIf="confirm==false">                
-                    <a [routerLink]="['../../editArtwork',project._id]" class="button-edit">Editar</a>
-                    <a (click)="setConfirm(true)" class="button-delete">Borrar</a>        
-
+                <a [routerLink]="['../../editArtwork',project._id]" class="button-edit">Editar</a>
+                <a (click)="setConfirm(true)" class="button-delete">Borrar</a>
             </p>
         </div>
             <p *ngIf="confirm==true">
                 <span class="confirm">Estas seguro de eliminar el proyecto?</span><br/>
                 <a (click)="setConfirm(false)" class="button-edit">Cancelar</a>
                 <a (click)="deleteProject(project._id)" class="button-delete">Eliminar definitivamente</a>
-            </p>
-        
-        
+            </p>        -->
     </div>
 </div>

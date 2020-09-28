@@ -1,5 +1,5 @@
-<div class="container">
-    <h2>{{title}}</h2>
+<!-- <div class="container">
+    
     <div class="message success" *ngIf="status=='success'">
         El proyecto se ha creado correctamente puedes verlo 
         <a [routerLink]="['/proyecto',saveProject._id]"> aquí</a>.
@@ -7,47 +7,57 @@
     <div class="message success" *ngIf="status=='failed'">
         El proyecto no se ha podido crear 
     </div>
-    <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
-        <p>
-            <label for="name">Nombre</label>
-            <input type="text" name="name" #name="ngModel" [(ngModel)]="project.name" required/>
-            <span class="form_error" *ngIf="name.touched && !name.valid">
-                El nombre es obligatorio
-            </span>
-        </p>
-        <p>
-            <label for="description">Descripción</label>
-            <input type="text" name="description" #description="ngModel" [(ngModel)]="project.description" required/>
-            <span class="form_error" *ngIf="description.touched && !description.valid">
-                La descripción es obligatoria
-            </span>
-        </p>
-        <p>
-            <label for="username">username</label>
-            <input type="text" name="username" #username="ngModel" [value]="project.username" [(ngModel)]="project.username" disabled/>
-            <span class="form_error" *ngIf="username.touched && !username.valid">
-                La username es obligatoria
-            </span>
-        </p>
-        <p>
-            <label for="year">Año de lanzamiento</label>
-            <input type="number" name="year" #year="ngModel" [(ngModel)]="project.year"/>
-        </p>
-        <p>
-            <label for="id_artist">Id del Artista</label>
-            <input type="text" [value]="project.id_artist" name="id_artist"  #id_artist="ngModel" [(ngModel)]="project.id_artist" disabled/>
-            <span class="form_error" *ngIf="id_artist.touched && !id_artist.valid">
-                Los id son obligatorios
-            </span>
-        </p>
-        <p>
-            <label for="image">Imagen del proyecto</label>
-            <!--evento que permite capturar los cambios en un input-->
-            <span class="image" *ngIf="project.image" style="float:none;">
-                <img src="{{url+'get-image/'+project.image}}" style="width: 100px;"/>
-            </span><br/>
-            <input type="file" placeholder="Subir imagen" (change)="fileChangeEvent($event)"/>
-        </p>
-        <input type="submit" value="Enviar" [disabled]="!projectForm.form.valid"/>
-    </form>
+    
+</div> -->
+
+<div class="col-lg-4 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h2>{{title}}</h2>
+        </div>
+        <div class="card-body">
+            <form #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
+                <div class="form-group">
+                    <label for="name">Nombre</label>
+                    <input type="text" class="form-control" name="name" #name="ngModel" [(ngModel)]="project.name" required/>
+                    <span class="form_error" *ngIf="name.touched && !name.valid">
+                        El nombre es obligatorio
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="description">Descripción</label>
+                    <input type="text" class="form-control" name="description" #description="ngModel" [(ngModel)]="project.description" required/>
+                    <span class="form_error" *ngIf="description.touched && !description.valid">
+                        La descripción es obligatoria
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="year">Año de lanzamiento</label>
+                    <input type="number" class="form-control" name="year" #year="ngModel" [(ngModel)]="project.year"/>
+                </div>
+                <div class="form-group">
+                    <label for="username">Nombre de usuario del artista</label>
+                    <input type="text" class="form-control" name="username" #username="ngModel" [value]="project.username" [(ngModel)]="project.username" disabled/>
+                    <span class="form_error" *ngIf="username.touched && !username.valid">
+                        La username es obligatoria
+                    </span>
+                </div>                
+                <div class="form-group">
+                    <label for="id_artist">Id del Artista</label>
+                    <input type="text" class="form-control" [value]="project.id_artist" name="id_artist"  #id_artist="ngModel" [(ngModel)]="project.id_artist" disabled/>
+                    <span class="form_error" *ngIf="id_artist.touched && !id_artist.valid">
+                        Los id son obligatorios
+                    </span>
+                </div>
+                <div class="form-group">
+                    <label for="image">Imagen de la Obra</label>
+                    <!-- <input type="file" class="form-control" placeholder="Subir imagen" (change)="fileChangeEvent($event)"/> -->
+                    <input type="file" class="d-none" (change)="onPhotoSelected($event)" #photoInput>
+                    <img [src]="photoSelected || 'assets/no-image.png'" class="img-fluid" alt="No image"
+                        (click)="photoInput.click()">
+                </div>
+                <input class="btn btn-primary btn-block" type="submit" value="Enviar" [disabled]="!projectForm.form.valid"/>
+            </form>
+        </div>
+    </div>
 </div>

@@ -24,14 +24,15 @@ export class CreatArtworkComponent implements OnInit {
   public status:string;
   public filesToUpload:Array<File>;
   public url:string;
-
+  photoSelected: string | ArrayBuffer;
+  file: File;
   constructor(
     private _router:Router,
     private _authService: AuthService,
     private _projectService:ArtworkService,
     private _uploadService:ArtworkUpService
     ) { 
-      this.title="Crear proyecto";
+      this.title="Información de tu Obra";
       this.project=new Artwork('','','','',2020,'','');
       this.url='http://localhost:3000/api/';
     }
@@ -40,6 +41,8 @@ export class CreatArtworkComponent implements OnInit {
     this.project.username = this._authService.getLoggedIn()['name']
     this.project.id_artist = this._authService.getLoggedIn()['_id']
   }
+
+  
 
   //guardar los datos
   onSubmit(form){
@@ -54,13 +57,13 @@ export class CreatArtworkComponent implements OnInit {
               this.status='success';
               console.log(result);
               this.ngOnInit()
-              this._router.navigate(['../../artist']);
-              form.reset();
+              this._router.navigate(['../../artist/tableArtwork']);
+              // form.reset();
             });
           }else{
             this.saveProject=response.project;
             this.status='success';
-            this._router.navigate(['../../artist']);
+            this._router.navigate(['../../artist/tableArtwork']);
             form.reset();
           }
         }else{
@@ -72,6 +75,17 @@ export class CreatArtworkComponent implements OnInit {
       }
     );
     
+  }
+
+  onPhotoSelected(event: any): void {
+    if (event.target.files && event.target.files[0]) {
+      this.file = <File>event.target.files[0];
+      // image preview
+      const reader = new FileReader();
+      reader.onload = e => this.photoSelected = reader.result;
+      reader.readAsDataURL(this.file);
+      this.filesToUpload = <Array<File>>event.target.files;
+    }
   }
 
   fileChangeEvent(fileInput:any){
