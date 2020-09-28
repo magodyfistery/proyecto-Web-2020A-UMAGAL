@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ElementRef, AfterViewInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { VideosService } from '../core/services/video/videos.service';
+
 
 @Component({
   selector: 'app-video',
   templateUrl: './video.component.html',
   styleUrls: ['./video.component.scss']
 })
-export class VideoComponent implements OnInit {
+export class VideoComponent implements OnInit, AfterViewInit  {
 
   dangerousVideoUrl: string
   videosUrl = []
@@ -18,11 +19,16 @@ export class VideoComponent implements OnInit {
 
   constructor(
     private videoService: VideosService,
-    private sanitizer:DomSanitizer
+    private sanitizer:DomSanitizer,
+    private elementRef: ElementRef
   )
   {
 
   }
+    ngAfterViewInit(){
+       this.elementRef.nativeElement.ownerDocument.body.style.backgroundColor = '#e4ddeb';
+    }
+
 
   ngOnInit(): void {
     this.getVideos()

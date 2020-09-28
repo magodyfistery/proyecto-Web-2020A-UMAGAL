@@ -19,6 +19,10 @@ export class AuthService {
     this.user_admin = null;
   }
 
+  isArtist(): boolean {
+    return this.user.artistic_name != undefined
+  }
+
 
   authAndRetrieveArtist(username: string, password: string){
     return this.http.post<UmagalResponse>(environment.url_api + '/user/auth_artist', {
