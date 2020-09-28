@@ -24,7 +24,7 @@
         </p>
         <p>
             <label for="username">username</label>
-            <input type="text" name="username" #username="ngModel" [(ngModel)]="project.username" required/>
+            <input type="text" name="username" #username="ngModel" [value]="project.username" [(ngModel)]="project.username" disabled/>
             <span class="form_error" *ngIf="username.touched && !username.valid">
                 La username es obligatoria
             </span>
@@ -35,7 +35,7 @@
         </p>
         <p>
             <label for="id_artist">Id del Artista</label>
-            <input type="text" name="id_artist" #id_artist="ngModel" [(ngModel)]="project.id_artist" required/>
+            <input type="text" [value]="project.id_artist" name="id_artist"  #id_artist="ngModel" [(ngModel)]="project.id_artist" disabled/>
             <span class="form_error" *ngIf="id_artist.touched && !id_artist.valid">
                 Los id son obligatorios
             </span>

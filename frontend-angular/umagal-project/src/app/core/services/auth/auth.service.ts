@@ -43,6 +43,11 @@ export class AuthService {
     this.user = JSON.parse(localStorage.getItem("user"));
     return this.user != null && this.user != undefined;
   }
+  getLoggedIn(){
+    this.user = JSON.parse(localStorage.getItem("user"));
+    // console.log(this.user)
+    return this.user;
+  }
 
   setCookieLogginUser(user: any) {
     localStorage.setItem("user", JSON.stringify(user))
