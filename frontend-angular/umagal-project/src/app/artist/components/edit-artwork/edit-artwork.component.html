@@ -16,7 +16,7 @@
                     <form class="card-body" #projectForm="ngForm" (ngSubmit)="onSubmit(projectForm)">
                         <div class="form-group">
                             <label for="name">Nombre</label>
-                            <input type="text" class="form-control" placeholder="algo1" [value]="project.name" name="name" #name="ngModel" [(ngModel)]="project.name" required/>
+                            <input type="text" [value]="project.name" class="form-control" placeholder="algo1"  name="name" #name="ngModel" [(ngModel)]="project.name" required/>
                             <span class="form_error" *ngIf="name.touched && !name.valid">
                                 El nombre es obligatorio
                             </span>
@@ -34,14 +34,14 @@
                         </div>
                         <div class="form-group">
                             <label for="username">Username</label>
-                            <input type="text" class="form-control" placeholder="username" [value]="project.username" name="username" #username="ngModel" [(ngModel)]="project.username" required/>
+                            <input type="text" class="form-control" placeholder="username" [value]="project.username" name="username" #username="ngModel" [(ngModel)]="project.username" disabled/>
                             <span class="form_error" *ngIf="username.touched && !username.valid">
                                 La username es obligatoria
                             </span>
                         </div>
                         <div class="form-group">
                             <label for="id_artist">Id del Artista</label>
-                            <input type="text" class="form-control" placeholder="username" [value]="project.id_artist" name="id_artist" #id_artist="ngModel" [(ngModel)]="project.id_artist" required/>
+                            <input type="text" class="form-control" placeholder="username" [value]="project.id_artist" name="id_artist" #id_artist="ngModel" [(ngModel)]="project.id_artist" disabled/>
                             <span class="form_error" *ngIf="id_artist.touched && !id_artist.valid">
                                 Los id son obligatorios
                             </span>

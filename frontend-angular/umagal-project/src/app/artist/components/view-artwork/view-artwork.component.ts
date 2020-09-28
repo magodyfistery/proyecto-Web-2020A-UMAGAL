@@ -23,8 +23,9 @@ export class ViewArtworkComponent implements OnInit {
   public url:string;
   public project:Artwork;
   public confirm:boolean;
-  public authService: AuthService;
+  
   constructor(    
+    private _authService: AuthService,
     private _projectService:ArtworkService,
     private _router:Router,
     private _route:ActivatedRoute
@@ -41,7 +42,8 @@ export class ViewArtworkComponent implements OnInit {
   }
 
   getAcces():Boolean{
-    return this.authService.isAdminLoggedIn()
+    this._authService.getLoggedIn()
+    return this._authService.isLoggedIn()
   }
 
   getProject(id){

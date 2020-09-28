@@ -2,8 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { Artwork } from '../../../core/models/artwork';
 import { ArtworkService} from "../../../core/services/artwork/artwork.service";
 import { ArtworkUpService } from "../../../core/services/artwork/artwork-up.service";
-import { FormsModule, NgForm }   from '@angular/forms';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AuthService } from 'src/app/core/services/auth/auth.service';
+
+import { Router, ActivatedRoute, Params } from '@angular/router';
+
+
 interface HtmlInputEvent extends Event {
   target: HTMLInputElement & EventTarget;
 }
@@ -23,6 +26,8 @@ export class CreatArtworkComponent implements OnInit {
   public url:string;
 
   constructor(
+    private _router:Router,
+    private _authService: AuthService,
     private _projectService:ArtworkService,
     private _uploadService:ArtworkUpService
     ) { 
@@ -32,6 +37,8 @@ export class CreatArtworkComponent implements OnInit {
     }
 
   ngOnInit(): void {
+    this.project.username = this._authService.getLoggedIn()['name']
+    this.project.id_artist = this._authService.getLoggedIn()['_id']
   }
 
   //guardar los datos
@@ -46,11 +53,14 @@ export class CreatArtworkComponent implements OnInit {
               this.saveProject=result.project;
               this.status='success';
               console.log(result);
+              this.ngOnInit()
+              this._router.navigate(['../../artist']);
               form.reset();
             });
           }else{
             this.saveProject=response.project;
             this.status='success';
+            this._router.navigate(['../../artist']);
             form.reset();
           }
         }else{
@@ -61,6 +71,7 @@ export class CreatArtworkComponent implements OnInit {
         console.log(<any>error);
       }
     );
+    
   }
 
   fileChangeEvent(fileInput:any){
