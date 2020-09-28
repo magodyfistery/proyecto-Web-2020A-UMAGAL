@@ -1,6 +1,6 @@
 
 mat-card {
-  width: 100%;
+  width: 600px;
 }
 
 mat-card-header, input, label, mat-card-actions  {
@@ -16,26 +16,10 @@ img {
 
 
 .anuncio-grid {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-gap: 50px 20px;
+    display: block;
     align-items: center;
     justify-content: center;
     margin: 2px;
     padding: 2px;
     border-radius: 8px;
-}
-
-@media  screen and (min-width: 500px) {
-    .anuncio-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-}
-
-@media screen and (min-width: 1080px) {
-    .anuncio-grid {
-        grid-template-columns: repeat(4, 1fr);
-    }
-
 }

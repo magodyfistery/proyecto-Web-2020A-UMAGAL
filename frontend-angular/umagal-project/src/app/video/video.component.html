@@ -1,33 +1,37 @@
-<h1> Videos </h1>
 <div *ngIf="artists">
 
-  <div *ngFor="let artist of artists; index as in;" class="center" style="border: 2px solid green;">
-      <hr>
-      <h1> Artista </h1>
-      <h2>{{artist.username}}</h2>
+  <div>
 
+    <div *ngFor="let artist of artists; index as in;">
+      <div class="center" style="border: 2px solid green;">
+        <h1 style="text-color: blue;"> <i><b> Artista: {{artist.artistic_name}} </b></i> </h1>
 
+        <div *ngIf="artist.videos.length > 0">
+          <div>
+            <div *ngFor="let video of artist.videos; index as i">
+                <br/>
+                <h3>Título: {{video.name}}</h3>
 
-      <div *ngIf="artist.videos.length > 0">
-        <h2> Videos del artista </h2>
-        <div  style="border: 2px solid black;">
-          <div *ngFor="let video of artist.videos; index as i">
-              <br/>
-              <h3>Título: {{video.name}}</h3>
-
-              <iframe width="560" height="315" [src]="videosUrl[in][i]" frameborder="0" allowfullscreen></iframe>
+                <iframe width="560" height="315" [src]="videosUrl[in][i]" frameborder="0" allowfullscreen></iframe>
+            </div>
           </div>
+
+        </div>
+        <div *ngIf="artist.videos.length == 0">
+          <h2> Este artista no tiene videos </h2>
         </div>
 
+
+
+
       </div>
-      <div *ngIf="artist.videos.length == 0">
-        <h2> Este artista no tiene videos </h2>
-      </div>
-
-
-
+        <br><hr><br>
+    </div>
 
   </div>
+
+
+
 </div>
 <div *ngIf="!artists" class="center">>
   Cargando...

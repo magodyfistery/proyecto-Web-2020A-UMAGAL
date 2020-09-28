@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
 
   public logged_in: boolean;
+    public is_artist: boolean;
 
   constructor(
     private authService: AuthService,
@@ -21,6 +22,11 @@ export class HeaderComponent implements OnInit {
 
   ngDoCheck() {
     this.logged_in = this.authService.isLoggedIn();
+    if(this.logged_in){
+      this.authService.getLoggedIn()
+      this.is_artist = this.authService.isArtist()
+
+    }
     console.log("Está logeado: ", this.logged_in)
   }
 

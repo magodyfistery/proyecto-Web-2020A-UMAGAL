@@ -24,8 +24,10 @@
         </div>
 
         <div *ngIf="logged_in" class="div-nav">
-            <a mat-button routerLink="/artist/listArtwork" routerLinkActive="active">Mis obras</a>
-            <a mat-button routerLink="/artist/tableArtwork" routerLinkActive="active"><b> Mi cuenta </b></a>
+            <div *ngIf="is_artist">
+              <a mat-button routerLink="/artist/listArtwork" routerLinkActive="active">Mis obras</a>
+              <a mat-button routerLink="/artist/tableArtwork" routerLinkActive="active"><b> Mi cuenta </b></a>
+            </div>
             <a mat-button (click)="logOut()"><b> Cerrar sesión </b></a>
         </div>
 
