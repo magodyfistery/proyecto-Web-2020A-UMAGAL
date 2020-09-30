@@ -3,13 +3,14 @@
     <div *ngFor="let artwork of artworks" class="center">
       <mat-card class="center">
 
+
         <mat-card-header>
             <mat-card-title>{{artwork.name}} por {{artwork.username}}</mat-card-title><br>
         </mat-card-header>
         <img src="{{'http://localhost:3000/api/get-image/'+artwork.image}}" alt="">
         <mat-card-content>
             <p>{{ artwork.description | slice:0:40}}</p>
-            <p style="text-color: green;"> {{ artwork.year }} </p>
+            <p style="color: green;"> {{ artwork.year }} </p>
         </mat-card-content>
       </mat-card>
 

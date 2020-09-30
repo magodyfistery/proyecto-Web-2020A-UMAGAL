@@ -1,0 +1,27 @@
+
+mat-card {
+  width: 100%;
+}
+
+mat-card-header, input, label, mat-card-actions  {
+  margin: auto;
+  text-align: center;
+}
+img {
+  display: block;
+  margin: auto;
+  width: 200px;
+  height: 200px;
+}
+
+
+.anuncio-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 50px 20px;
+    align-items: center;
+    justify-content: center;
+    margin: 2px;
+    padding: 2px;
+    border-radius: 8px;
+}

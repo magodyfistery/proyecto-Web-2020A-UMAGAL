@@ -17,6 +17,8 @@ import { GalleryComponent } from './gallery/gallery.component';
 import { OurArtistsComponent } from './our-artists/our-artists.component';
 
 
+
+
 @NgModule({
   declarations: [
     AppComponent,

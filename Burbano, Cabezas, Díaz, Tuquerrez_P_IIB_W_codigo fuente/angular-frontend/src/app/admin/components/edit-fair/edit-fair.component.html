@@ -1,0 +1,61 @@
+
+<form [formGroup]="formGroup" (ngSubmit)="updateFair($event)">
+  <mat-card class="center" >
+    <mat-card-header class="center" >
+      <h3> Formulario de feria </h3>
+    </mat-card-header>
+
+    <mat-card-content class="center" >
+
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input formControlName="name" matInput type="text" value="{{fair.name}}" readonly>
+          </mat-form-field>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input placeholder="Ingrese la fecha del modo 'yyyy-mm-dd'" formControlName="date" matInput type="text">
+          </mat-form-field>
+        </div>
+      </div>
+
+
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input placeholder="Ingrese la descripción" formControlName="description" matInput type="text">
+          </mat-form-field>
+        </div>
+      </div>
+
+
+
+      <div class="row">
+        <div class="col-xs">
+          <mat-form-field>
+            <input placeholder="Ingrese los artistas separados por ','" formControlName="artists" matInput type="text">
+          </mat-form-field>
+        </div>
+      </div>
+
+      <h2> Imagen principal (opcional) </h2>
+      <div class="row">
+        <div class="col-xs">
+          <input type="file" (change)="createFormData($event)">
+        </div>
+      </div>
+
+
+
+    </mat-card-content>
+
+    <mat-card-actions>
+      <button class="center" [disabled]="formGroup.invalid" mat-raised-button type="submit"> Actualizar </button>
+    </mat-card-actions>
+  </mat-card>
+  <br>
+</form>

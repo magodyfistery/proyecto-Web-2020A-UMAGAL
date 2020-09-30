@@ -1,0 +1,36 @@
+<mat-toolbar color="primary">
+
+  <mat-toolbar-row>
+
+
+    <a class="navbar-brand" mat-button routerLink="/" routerLinkActive="active">
+      <h1> UMAGAL </h1>
+    </a>
+
+
+    <span class="spacer"></span>
+
+
+    <div fxShow="true" fxHide.lt-md="true"> <!--Respeta el ancho pero sigue alineado-->
+
+       <a mat-button routerLink="/exhibition/fairs" routerLinkActive="active">Ferias</a>
+        <a mat-button routerLink="/exhibition" routerLinkActive="active">Exhibiciones</a>
+        <a mat-button routerLink="/videos" routerLinkActive="active">Videos</a>
+        <a mat-button routerLink="/galleries" routerLinkActive="active">Galerias</a>
+        <a mat-button routerLink="/contact" routerLinkActive="active">Contacto</a>
+        <div *ngIf="!logged_in" class="div-nav">
+            <a mat-button routerLink="/account/login" routerLinkActive="active"><b> Iniciar sesión </b></a>
+            <a mat-button routerLink="/account/register" routerLinkActive="active"><b> Registrarse </b></a>
+        </div>
+
+        <div *ngIf="logged_in" class="div-nav">
+            <div *ngIf="is_artist">
+              <a mat-button routerLink="/artist/listArtwork" routerLinkActive="active">Mis obras</a>
+              <a mat-button routerLink="/artist/tableArtwork" routerLinkActive="active"><b> Mi cuenta </b></a>
+            </div>
+            <a mat-button (click)="logOut()"><b> Cerrar sesión </b></a>
+        </div>
+
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>
